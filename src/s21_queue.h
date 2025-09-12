@@ -7,19 +7,19 @@ class S21Queue {
     private: 
         int capacity_;
         int lenght_;
-        Type* front_;
-        Type* back_;
+        Type& front_;
+        Type& back_;
     public: 
         // функция проверяющая пустая очередь или нет
         bool empty();
         // функция возвращающая размер очереди
-        bool size();
+        int size();
         // добавление элемента в конец
-        bool push();
+        void push();
         // удаление элемента сначала
-        bool pop();
+        void pop();
         // получение первого элемента
-        bool front();
+        Type front();
         // получение последнего элемента
-        bool back();
+        Type back();
 };
