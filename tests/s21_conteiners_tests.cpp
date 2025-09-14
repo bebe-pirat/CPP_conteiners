@@ -110,6 +110,49 @@ TEST(S21QueuePush__Test, AddTenElemetsToQueue) {
     ASSERT_DOUBLE_EQ(queue1.back(), 10.1);
 }
 
+TEST(S21QueuePop__Test, RemoveElemetFromQueue_1) {
+    S21Queue<double> queue1;
+    queue1.push(1.1);
+    queue1.pop();
+
+    ASSERT_TRUE(queue1.empty());
+    ASSERT_EQ(queue1.size(), 0);
+}
+
+TEST(S21QueuePop__Test, RemoveElemetFromQueue_2) {
+    S21Queue<double> queue1;
+    queue1.push(1.1);
+    queue1.push(2.2);
+    queue1.push(3.3);
+    queue1.pop();
+
+    ASSERT_FALSE(queue1.empty());
+    ASSERT_EQ(queue1.size(), 2);
+    ASSERT_DOUBLE_EQ(queue1.front(), 2.2);
+    ASSERT_DOUBLE_EQ(queue1.back(), 3.3);
+}
+
+TEST(S21QueuePop__Test, RemoveTwoElemetsToQueue) {
+    S21Queue<double> queue1;
+    queue1.push(1.1);
+    queue1.push(2.2);
+    queue1.push(3.3);
+    queue1.push(4.4);
+    queue1.push(5.5);
+    queue1.push(6.6);
+    queue1.push(7.7);
+    queue1.push(8.8);
+    queue1.push(9.9);
+    queue1.push(10.1);
+    queue1.pop();
+    queue1.pop();
+
+    ASSERT_FALSE(queue1.empty());
+    ASSERT_EQ(queue1.size(), 8);
+    ASSERT_DOUBLE_EQ(queue1.front(), 3.3);
+    ASSERT_DOUBLE_EQ(queue1.back(), 10.1);
+}
+
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
 
