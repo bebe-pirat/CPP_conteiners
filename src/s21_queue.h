@@ -25,7 +25,7 @@ public:
     
     // Операторы
     S21Queue& operator=(const S21Queue& other); // Копирующее присваивание
-    
+
     // Функция проверяющая пустая очередь или нет
     bool empty() const;
     
@@ -40,12 +40,10 @@ public:
     
     // Получение первого элемента
     Type& front();
-    const Type& front() const;
     
     // Получение последнего элемента
     Type& back();
-    const Type& back() const;
     
     // Обмен содержимым
-    void swap(S21Queue& other) noexcept;
+    void swap(S21Queue& other);
 };
