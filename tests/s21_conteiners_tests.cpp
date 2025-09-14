@@ -159,6 +159,29 @@ TEST(S21QueuePop__Test, RemoveElementFromEmptyQueue) {
     ASSERT_ANY_THROW(queue1.pop());
 }
 
+TEST(S21QueueBack___Test, GetLastElementFromQueue_1) {
+    S21Queue<double> queue1;
+    queue1.push(1.1);
+    queue1.push(2.2);
+
+    ASSERT_DOUBLE_EQ(queue1.back(), 2.2);
+}
+
+TEST(S21QueueBack___Test, GetLastElementFromQueue_2) {
+    S21Queue<double> queue1;
+    queue1.push(1.1);
+    queue1.push(2.2);
+    queue1.pop();
+
+    ASSERT_DOUBLE_EQ(queue1.front(), 2.2);
+}
+
+TEST(S21QueueBack___Test, GetLastElementFromEmptyQueue) {
+    S21Queue<double> queue1;
+
+    ASSERT_ANY_THROW(queue1.back());
+}
+
 TEST(S21QueueFront___Test, GetFirstElementFromQueue_1) {
     S21Queue<double> queue1;
     queue1.push(1.1);
