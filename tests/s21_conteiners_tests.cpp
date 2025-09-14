@@ -153,6 +153,12 @@ TEST(S21QueuePop__Test, RemoveTwoElemetsToQueue) {
     ASSERT_DOUBLE_EQ(queue1.back(), 10.1);
 }
 
+TEST(S21QueuePop__Test, RemoveElementFromEmptyQueue) {
+    S21Queue<double> queue1;
+ 
+    ASSERT_ANY_THROW(queue1.pop());
+}
+
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
 
