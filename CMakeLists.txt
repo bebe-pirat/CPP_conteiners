@@ -25,7 +25,7 @@ target_include_directories(s21_containers PUBLIC
 # Тесты
 find_package(GTest REQUIRED)
 
-set(TEST_SOURCES tests/s21_containers_tests.cpp)
+set(TEST_SOURCES tests/s21_conteiners_tests.cpp)
 
 add_executable(test_app ${TEST_SOURCES})
 target_link_libraries(test_app PRIVATE 
