@@ -19,25 +19,55 @@ TEST(S21QueueConstructor__Test, Constructor_copy) {
     ASSERT_EQ(queue2.back(), 7);
 }
 
-TEST(S21Queue_Empty__Test, EmptyQueue) {
+TEST(S21QueueEmpty__Test, EmptyQueue) {
     S21Queue<int> queue1;
 
     ASSERT_TRUE(queue1.empty());
 }
 
-TEST(S21Queue_Empty__Test, NonEmptyQueue_1) {
+TEST(S21QueueEmpty__Test, NonEmptyQueue_1) {
     S21Queue<int> queue1;
     queue1.push(0);
 
     ASSERT_FALSE(queue1.empty());
 }
 
-TEST(S21Queue_Empty__Test, NonEmptyQueue_2) {
+TEST(S21QueueEmpty__Test, NonEmptyQueue_2) {
     S21Queue<int> queue1;
     queue1.push(0);
     queue1.push(0);
 
     ASSERT_FALSE(queue1.empty());
+}
+
+TEST(S21QueueSize__Test, EmptyQueue) {
+    S21Queue<int> queue1;
+
+    ASSERT_EQ(queue1.size(), 0);
+}
+
+TEST(S21QueueSize__Test, NonEmptyQueue_1) {
+    S21Queue<int> queue1;
+    queue1.push(0);
+
+    ASSERT_EQ(queue1.size(), 1);
+}
+
+TEST(S21QueueSize__Test, NonEmptyQueue_2) {
+    S21Queue<int> queue1;
+    queue1.push(0);
+    queue1.push(0);
+
+    ASSERT_EQ(queue1.size(), 2);
+}
+
+TEST(S21QueueSize__Test, NonEmptyQueue_3) {
+    S21Queue<int> queue1;
+    queue1.push(0);
+    queue1.push(0);
+    queue1.pop();
+
+    ASSERT_EQ(queue1.size(), 1);
 }
 
 int main(int argc, char** argv) {
