@@ -1,2 +1,3 @@
-# CPP_conteiners
-implementation of conteiners: queue and set
+# Реализация контейнеров (queue, set) на c++
+
+Проект включает в себя библиотеку, содержащую классы контейнеров, и модульные тесты. 
