@@ -108,7 +108,14 @@ void S21Set<Type>::erase(const Type& value) {
         for (size_t i{is_exist.second}; i < size_; i++) {
             array_[i] = array_[i + 1];
         }
-        
+
         size_--;
     }
+}
+
+template<typename Type>
+bool S21Set<Type>::contains(const Type& value) {
+    auto is_exist = binary_search_position(value);
+
+    return is_exist.first;
 }
