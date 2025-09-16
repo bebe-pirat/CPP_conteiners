@@ -7,6 +7,7 @@ class S21Set {
         Type* array_;
         uint32_t capacity_ = 100;
         uint32_t size_ = 100;
+
         // Метод для бинарного поиска, если элемент найден, то возвращает true и индекс элемента, в противном случае false и индекс, куда надо вставить элемент 
         std::pair<bool, int> binary_search_position(const Type& value);
         void resize();
@@ -95,5 +96,19 @@ void S21Set<Type>::insert(const Type& value) {
         }
 
         array_[is_exist.second] = value;
+        size_++;
+    }
+}
+
+template<typename Type> 
+void S21Set<Type>::erase(const Type& value) {
+    auto is_exist = binary_search_position(value);
+
+    if (!is_exist.first) {
+        for (size_t i{is_exist.second}; i < size_; i++) {
+            array_[i] = array_[i + 1];
+        }
+        
+        size_--;
     }
 }
